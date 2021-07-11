@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <title>Football</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Football">
+    <meta name="description" content="Just a weird game">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body style="background:#EAEAEA">
+    <div class="background_blend"></div>
+    <div class="middle">
+        <div class="winner_plane"> <p></p> <button type="button" id="clear_button" onclick="clear_board()">New Game</button> </div>
+        <canvas id="board" width="484" height="364" style="background:#FFF;top:8px;left:8px;position:absolute;"></canvas>
+    </div>
+
+    <div class="settings">
+      <p class="switch_text">Rows:</p>
+      <input id="row_number" class="switch" type="number" value="6" max="100" min="2" onchange="ChangeSize(this, 'row')">
+      <p class="switch_text">Columns:</p>
+      <input id="column_number" class="switch" type="number" value="8" max="100" min="2" onchange="ChangeSize(this, 'column')">
+      <p class="switch_text">Dark Mode</p>
+      <label class="switch">
+        <input type="checkbox" onchange='dark_mode(this);'>
+        <span class="slider round"></span>
+      </label>
+      <!--<p class="switch_text">Obstacles</p>
+      <label class="switch">
+        <input type="checkbox" onchange='ChangeEvent(this, "Obstacles");'>
+        <span class="slider round"></span>
+      </label>-->
+    </div>
+
+    <script src="game.js" charset="utf-8"></script>
+  </body>
+</html>
